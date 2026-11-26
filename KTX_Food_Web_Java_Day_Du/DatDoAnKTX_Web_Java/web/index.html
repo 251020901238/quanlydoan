@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KTX Food — Đặt đồ ăn sinh viên</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="header">
+  <div class="container nav">
+    <a class="logo" href="#"> <span class="logo-icon">🍽</span><span>KTX <strong>FOOD</strong><small>ĐẶT ĐỒ ĂN NỘI BỘ</small></span></a>
+    <nav class="navlinks"><a href="#menu">Thực đơn</a><a href="#how">Cách đặt hàng</a><button class="nav-order" id="historyBtn">Đơn hàng của tôi</button></nav>
+    <button class="cart-mobile" id="mobileCartBtn" aria-label="Mở giỏ hàng">🛒 <span id="mobileCount">0</span></button>
+  </div>
+</header>
+<main>
+  <section class="hero container">
+    <div class="hero-content">
+      <div class="eyebrow"><span class="dot"></span> DÀNH RIÊNG CHO SINH VIÊN KÝ TÚC XÁ</div>
+      <h1>Bữa ngon mỗi ngày,<br><span>đặt nhanh tại KTX.</span></h1>
+      <p>Chọn món bạn thích, thêm vào giỏ hàng và đặt ngay. Đơn giản, tiện lợi và phù hợp với sinh viên.</p>
+      <a href="#menu" class="btn primary">Xem thực đơn <span>↗</span></a>
+      <div class="hero-features"><span>✓ Thực đơn dễ chọn</span><span>✓ Thanh toán linh hoạt</span></div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-circle"></div>
+      <div class="hero-plate">🍛</div>
+      <div class="float-card top"><span>⭐</span><div><strong>Đồ ăn mỗi ngày</strong><small>Chọn theo sở thích</small></div></div>
+      <div class="float-card bottom"><span>🚀</span><div><strong>Đặt hàng dễ dàng</strong><small>Chỉ vài thao tác</small></div></div>
+    </div>
+  </section>
+  <div class="container page-layout" id="menu">
+    <section class="menu-area">
+      <div class="section-header"><div><div class="mini-label">THỰC ĐƠN HÔM NAY</div><h2>Hôm nay ăn gì?</h2><p>Chọn món ngon cho bữa ăn của bạn nhé.</p></div><span class="menu-count" id="menuCount"></span></div>
+      <div class="filters"><label class="search">⌕ <input id="searchInput" type="search" placeholder="Tìm tên món ăn..." autocomplete="off"></label><div class="category-row" id="categoryButtons"></div></div>
+      <div id="foodGrid" class="food-grid"><div class="loading">Đang tải thực đơn...</div></div>
+    </section>
+    <aside class="cart" id="cartPanel">
+      <div class="cart-heading"><div><span class="cart-symbol">🛒</span> <strong>Giỏ hàng của bạn</strong></div><button id="closeCart" class="close-cart" aria-label="Đóng giỏ hàng">✕</button></div>
+      <div class="student-box"><span class="student-avatar">SV</span><div class="student-text"><strong id="studentName">Sinh viên</strong><small id="studentRoom">Ký túc xá</small></div></div>
+      <div class="balance"><span>Số dư ví sinh viên</span><strong id="balance">0 ₫</strong></div>
+      <div class="cart-subtitle">Món đã chọn <span id="cartCount">0</span></div>
+      <div id="cartItems" class="cart-items"></div>
+      <div class="cart-footer"><div class="total"><span>Tổng thanh toán</span><strong id="cartTotal">0 ₫</strong></div><div class="pay-title">Phương thức thanh toán</div>
+        <div class="payment-options">
+          <label class="pay-option"><input type="radio" name="payment" value="wallet" checked><span>💳 Ví sinh viên</span></label>
+          <label class="pay-option"><input type="radio" name="payment" value="cash"><span>💵 Tiền mặt</span></label>
+          <label class="pay-option"><input type="radio" name="payment" value="bank"><span>🏦 Chuyển khoản</span></label>
+        </div>
+        <button class="btn checkout" id="checkoutBtn">Xác nhận đặt hàng <span>→</span></button>
+        <small class="payment-note">Tiền mặt/chuyển khoản chỉ là mô phỏng, chưa kết nối ngân hàng.</small>
+      </div>
+    </aside>
+  </div>
+  <section class="how container" id="how"><div class="mini-label">ĐƠN GIẢN TRONG 3 BƯỚC</div><h2>Đặt món thật dễ dàng</h2><div class="steps"><div><span>01</span><strong>Chọn món</strong><p>Xem danh sách và chọn món bạn yêu thích.</p></div><div><span>02</span><strong>Kiểm tra giỏ</strong><p>Điều chỉnh số lượng và xem tổng tiền.</p></div><div><span>03</span><strong>Đặt hàng</strong><p>Chọn phương thức thanh toán để hoàn tất.</p></div></div></section>
+</main>
+<footer><div class="container foot"><span><strong>KTX FOOD</strong> · Đề tài Java OOP nhóm 01</span><span>Hệ thống mô phỏng phục vụ học tập</span></div></footer>
+<div id="toast" class="toast" role="status"></div>
+<div class="modal-backdrop" id="modal" hidden><div class="modal"><button class="modal-close" id="modalClose">✕</button><div id="modalBody"></div></div></div>
+<script src="/app.js"></script>
+</body>
+</html>
